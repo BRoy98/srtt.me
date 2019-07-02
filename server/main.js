@@ -10,7 +10,9 @@ const config = require('./config');
 const cors = require('cors');
 const {
     preservedUrls
-} = require('./util');
+} = require('./utils');
+
+let Url = require('./models/url');
 
 // Establish Connection
 mongoose.connect(config.MONGO_URL, {
@@ -43,6 +45,20 @@ app.use(express.static(path.join(__dirname + '/../client/dist/srtt')));
 // frontend routes
 app.get(preservedUrls, (req, res) => {
     res.sendFile(path.resolve('client/dist/srtt/index.html'));
+});
+
+app.use('/api/', require('./routes'));
+
+app.get('/:id', (req, res) => {
+    const url = req.params.id;
+    Url.findOne({
+            'shortId': url
+        }).exec()
+        .then(urlData => {
+            if (!urlData)
+                return res.redirect('/404');
+            return res.status(301).redirect(urlData.destUrl);
+        });
 });
 
 app.listen(config.PORT, err => {
