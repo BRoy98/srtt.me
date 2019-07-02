@@ -1,0 +1,59 @@
+.nav {
+  padding: 0 1rem;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  padding: 0 2rem;
+  color: #36456A;
+  font-size: 28px;
+}
+
+.nav-link {
+  padding: 2.5rem 1rem;
+  color: #36456A;
+  text-decoration: none;
+  font-weight: 300;
+}
+
+.nav-link::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 3px;
+  background: #1FF2AF;
+  transition: width .3s;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.login-parent {
+  padding: 2rem 1rem;
+}
+
+.login-button {
+  color: rgba(255, 255, 255, 0.95);
+  text-decoration: none;
+  font-weight: 400;
+  background-image: linear-gradient(90deg, #8F42FC, #FF3687);
+  overflow: hidden;
+  padding: 8px 20px;
+  border-radius: 30px;
+
+
+  text-align: center;
+  display: inline-block;
+  will-change: transform;
+
+  overflow: hidden;
+  transition: 0.3s ease-in-out;
+  z-index: 1;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.login-button:hover {
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 13px 10px rgba(0, 0, 0, 0.22);
+  transform: scale(1.05);
+}
