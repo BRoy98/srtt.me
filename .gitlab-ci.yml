@@ -1,0 +1,22 @@
+image: node:latest
+
+stages:
+- build
+
+cache:
+  paths:
+    - node_modules/
+
+build:
+  stage: build
+  script:
+    - npm install
+    - cd client
+    - npm install
+    - npm install -g @angular/cli
+    - ng build --aot --prod
+    
+  artifacts:
+    paths:
+    - client/dist/srtt/
+
