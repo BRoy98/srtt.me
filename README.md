@@ -8,6 +8,7 @@
 
 [![Contributions](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](https://github.com/BRoy98/srtt.me/#contributing)
 [![GitHub license](https://img.shields.io/github/license/BRoy98/srtt.me.svg)](https://github.com/BRoy98/srtt.me/blob/develop/LICENSE)
+[![pipeline status](https://gitlab.com/BRoy98/srtt-me/badges/master/pipeline.svg)](https://gitlab.com/BRoy98/srtt-me/commits/master)
 
 ## Table of Contents
 * [Features](#features)
