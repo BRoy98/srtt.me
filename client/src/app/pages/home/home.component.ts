@@ -11,6 +11,9 @@ export class HomeComponent implements OnInit {
     url: '',
   };
 
+  warnMsg = '';
+  localUrls = [];
+
   constructor() { }
 
   ngOnInit() {

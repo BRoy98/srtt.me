@@ -57,3 +57,38 @@
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 13px 10px rgba(0, 0, 0, 0.22);
   transform: scale(1.05);
 }
+
+
+
+
+@media (max-width: 576px) {
+  .navbar-brand {
+    padding: 0;
+    margin: 0 0 10px;
+    text-align: center;
+    font-size: 22px;
+  }
+
+  .nav-link {
+    padding: 0.89rem 1rem;
+  }
+
+  .login-parent {
+    padding: 0.5rem 0.2rem;
+  }
+
+  .nav {
+    padding: 0;
+  }
+
+  .login-button {
+    font-size: 14px;
+    padding: 6px 20px;
+  }
+}
+
+@media (max-width: 460px) {
+  .nav-item.github {
+    display: none;
+  }
+}
