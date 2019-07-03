@@ -2195,9 +2195,9 @@ ee-first@1.1.1:
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
 electron-to-chromium@^1.3.164:
-  version "1.3.181"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.181.tgz#1c538401af8f3eb285db893b66e43f4bea72fd83"
-  integrity sha512-xf1dCoc6FSCVcNQu8VGiMSH55rOT/ov6U7UpMgw4Erg5KfD1LHTXqm34/IGp55TLX4WqwuT4IIeJWhdGhO8mYw==
+  version "1.3.184"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.184.tgz#084fdb999b21dd567512625a7ac04f4c248d0ed8"
+  integrity sha512-jctpw2OkTBfpKg6PI3ndZZ+LlH6y0Pc+o9wvOkm9iqqgQ/FcOxpiADeB4kGddAEtZ+PBR4+TStEcoj1ApS3lUA==
 
 elliptic@^6.0.0:
   version "6.5.0"
@@ -4678,6 +4678,21 @@ neo-async@^2.5.0, neo-async@^2.6.0:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.1.tgz#ac27ada66167fa8849a6addd837f6b189ad2081c"
   integrity sha512-iyam8fBuCUpWeKPGpaNMetEocMt364qkCsfL9JuhjXX6dRnguRVOfk2GZaDpPjcOKiiXCPINZC1GczQ7iTq3Zw==
 
+ngx-clipboard@^12.1.2:
+  version "12.1.2"
+  resolved "https://registry.yarnpkg.com/ngx-clipboard/-/ngx-clipboard-12.1.2.tgz#69077d928a20b061ef22b51bd871633bb4d6af0a"
+  integrity sha512-tctOooh9WWvK7tVKV+CAGN5nNAhnL7oqEoJmJO4TmkHHwVbL0QQFWdWB5yiMYTRQ/ZXV3bCpufiVM8F4clXthw==
+  dependencies:
+    ngx-window-token "^2.0.0"
+    tslib "^1.9.0"
+
+ngx-window-token@^2.0.0:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/ngx-window-token/-/ngx-window-token-2.0.1.tgz#8f91221af4116aa9f49bb3f7a6f1111639884fba"
+  integrity sha512-rvqdqJEfnWXQFU5fyfYt06E10tR/UtFOYdF3QebfcOh5VIJhnTKiprX8e4B9OrX7WEVFm9BT8uV72xXcEgsaKA==
+  dependencies:
+    tslib "^1.9.0"
+
 nice-try@^1.0.4:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/nice-try/-/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"
@@ -5481,9 +5496,9 @@ pseudomap@^1.0.2:
   integrity sha1-8FKijacOYYkX7wqKw0wa5aaChrM=
 
 psl@^1.1.24:
-  version "1.1.33"
-  resolved "https://registry.yarnpkg.com/psl/-/psl-1.1.33.tgz#5533d9384ca7aab86425198e10e8053ebfeab661"
-  integrity sha512-LTDP2uSrsc7XCb5lO7A8BI1qYxRe/8EqlRvMeEl6rsnYAqDOl8xHR+8lSAIVfrNaSAlTPTNOCgNjWcoUL3AZsw==
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/psl/-/psl-1.2.0.tgz#df12b5b1b3a30f51c329eacbdef98f3a6e136dc6"
+  integrity sha512-GEn74ZffufCmkDDLNcl3uuyF/aSD6exEyh1v/ZSdAomB82t6G9hzJVRx0jBmLDW+VfZqks3aScmMw9DszwUalA==
 
 public-encrypt@^4.0.0:
   version "4.0.3"
@@ -6084,9 +6099,9 @@ semver@5.5.1:
   integrity sha512-PqpAxfrEhlSUWge8dwIp4tZnQ25DIOthpiaHNIthsjEFQD6EvqUKUDM7L8O2rShkFccYo1VjJR0coWfNkCubRw==
 
 semver@^6.0.0:
-  version "6.1.3"
-  resolved "https://registry.yarnpkg.com/semver/-/semver-6.1.3.tgz#ef997a1a024f67dd48a7f155df88bb7b5c6c3fc7"
-  integrity sha512-aymF+56WJJMyXQHcd4hlK4N75rwj5RQpfW8ePlQnJsTYOBLlLbcIErR/G1s9SkIvKBqOudR3KAx4wEqP+F1hNQ==
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/semver/-/semver-6.2.0.tgz#4d813d9590aaf8a9192693d6c85b9344de5901db"
+  integrity sha512-jdFC1VdUGT/2Scgbimf7FSx9iJLXoqfglSF+gJeuNWVpiE37OIbc1jywR/GJyFdz3mnkz2/id0L0J/cr0izR5A==
 
 semver@~5.3.0:
   version "5.3.0"
