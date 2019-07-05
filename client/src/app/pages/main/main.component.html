@@ -1,0 +1,42 @@
+<div class="home-row">
+  <div class="column main" [ngClass]="{'expand': !showSignIn}">
+    <app-header (signInEvent)="getSignInState($event)"></app-header>
+    <router-outlet></router-outlet>
+  </div>
+  <div class="column signin" [ngClass]="{'collapsed': !showSignIn}">
+    <div class="card card-signin">
+      <div class="card-body">
+        <h5 class="card-title text-center">Sign In</h5>
+        <div class="social-parent">
+          <button class="btn btn-lg btn-primary btn-block text-uppercase fb-btn">
+            <div class="icon">
+              <img class="fb" src="/assets/facebook-icon.png" width="45px" height="45px">
+            </div>
+            CONTINUE WITH FACEBOOK
+          </button>
+          <button class="btn btn-lg btn-primary btn-block text-uppercase google-btn" (click)="socialSignIn('google')">
+            <div class="icon">
+              <img class="google" src="/assets/google-icon.png" width="45px" height="45px">
+            </div>
+            CONTINUE WITH GOOGLE
+          </button>
+        </div>
+        <div class="signin-devider">
+          <span class="or">OR</span>
+        </div>
+        <form class="form-signin">
+          <div class="form-label-group">
+            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+            <!-- <label for="inputEmail">Email address</label> -->
+          </div>
+
+          <div class="form-label-group">
+            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+            <!-- <label for="inputPassword">Password</label> -->
+          </div>
+          <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

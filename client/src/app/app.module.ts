@@ -5,11 +5,30 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { ClipboardModule } from 'ngx-clipboard';
+import {
+  SocialLoginModule,
+  AuthServiceConfig,
+  GoogleLoginProvider,
+} from 'angular-6-social-login';
+import { config } from 'src/environments/config';
 import { HomeComponent } from './pages/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
-import { SigninComponent } from './pages/signin/signin.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
+import { MainComponent } from './pages/main/main.component';
+
+// Configs
+export function getAuthServiceConfigs() {
+  const authConfig = new AuthServiceConfig(
+    [
+      {
+        id: GoogleLoginProvider.PROVIDER_ID,
+        provider: new GoogleLoginProvider(config.GOOGLE_LOGIN_CLIENT_ID)
+      },
+    ]
+  );
+  return authConfig;
+}
 
 @NgModule({
   declarations: [
@@ -17,16 +36,22 @@ import { ContactUsComponent } from './pages/contact-us/contact-us.component';
     HomeComponent,
     HeaderComponent,
     NotFoundComponent,
-    SigninComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ClipboardModule
+    ClipboardModule,
+    SocialLoginModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: AuthServiceConfig,
+      useFactory: getAuthServiceConfigs
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

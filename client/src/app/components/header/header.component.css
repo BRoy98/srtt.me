@@ -42,13 +42,12 @@
   padding: 8px 20px;
   border-radius: 30px;
 
-
   text-align: center;
   display: inline-block;
   will-change: transform;
 
   overflow: hidden;
-  transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out all;
   z-index: 1;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }

@@ -1,0 +1,182 @@
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  padding: 10px;
+  transition: width 0.4s ease-out, opacity 0.25s ease 0s;
+  /* transition-timing-function: cubic-bezier(0, .51, .53, .93); */
+  opacity: 1;
+}
+
+.column.main {
+  width: 70%;
+  display: block;
+}
+
+.column.signin {
+  right: 0;
+  width: 30%;
+  height: 100%;
+  position: absolute;
+  box-shadow: 2px 0 13px 1px #d8d8d8;
+}
+
+.column.main.expand {
+  width: 100%;
+  display: block;
+}
+
+.column.signin.collapsed {
+  width: 0%;
+  opacity: 0;
+  position: relative;
+}
+
+
+@media only screen and (max-width: 1000px) {
+  .column.main {
+    width: 0%;
+    display: none;
+  }
+
+  .column.signin {
+    width: 100%;
+  }
+}
+
+
+/* Sign in */
+
+.card-signin {
+  border: 0;
+  border-radius: 1rem;
+  max-width: 490px;
+  margin: auto;
+}
+
+.social-parent {
+  margin: 0 0 20px;
+}
+
+.social-parent .btn {
+  position: relative;
+  margin: 0 0 20px;
+  font-size: 13px;
+}
+
+.social-parent .btn .icon .google {
+  position: absolute;
+  left: 5px;
+  top: 1.2px;
+  padding: 9px;
+}
+
+.social-parent .btn .icon .fb {
+  position: absolute;
+  left: 5px;
+  top: 1.2px;
+  padding: 0;
+}
+
+.social-parent .btn.google-btn {
+  background-color: #4c90f5;
+}
+
+.social-parent .btn.fb-btn {
+  background-color: #4d70c4;
+}
+
+.signin-devider {
+  width: 85%;
+  position: relative;
+  text-align: center;
+  margin: 15px auto;
+}
+
+.signin-devider::after {
+  content: "";
+  border-bottom: 1px solid #00000033;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
+.signin-devider .or {
+  padding: 0 8px;
+  position: relative;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000000a3;
+  z-index: 1;
+  background-color: #ffffff;
+}
+
+.card .card-title {
+  margin: 20px 0 30px;
+  color: #36456A;
+  text-align: center;
+  font-weight: 600;
+  font-size: 2.1rem;
+  padding-top: 1rem;
+}
+
+.card .card-body {
+  padding: 0 40px 40px;
+}
+
+.form-signin {
+  width: 100%;
+}
+
+.form-signin .form-label-group {
+  margin-bottom: 20px;
+}
+
+.form-signin input {
+  border: 0px;
+  height: 48px;
+  padding: 6px 20px;
+  border-radius: 25px;
+  border: 0.5px #0000000d solid;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
+  transition: 0.3s ease-in-out all;
+  /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); */
+}
+
+.form-signin input:hover {
+  transform: scale(1.03);
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 13px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-signin input:focus {
+  border: 0px;
+  transform: scale(1.03);
+  border: 0.5px #0000000d solid;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 13px 10px rgba(0, 0, 0, 0.1);
+}
+
+button {
+  border: 0px;
+  height: 48px;
+  font-size: 17px;
+  border-radius: 25px;
+  transition: 0.3s ease-in-out all;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 13px 10px rgba(0, 0, 0, 0.22);
+}
+
+button:focus {
+  border: 0px;
+  transform: scale(1.05);
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 13px 10px rgba(0, 0, 0, 0.22);
+}
