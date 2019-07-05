@@ -4,9 +4,7 @@
 [![GitHub license](https://img.shields.io/github/license/BRoy98/srtt.me.svg)](https://github.com/BRoy98/srtt.me/blob/develop/LICENSE)
 [![pipeline status](https://gitlab.com/BRoy98/srtt-me/badges/master/pipeline.svg)](https://gitlab.com/BRoy98/srtt-me/commits/master)
 
-**Srtt.me** is a URL shortener with custom URLs, URL password and link click stats.
-
-*Contributions and bug reports are welcome.*
+**Srtt.me** is a URL shortener built with MEAN Stack. It is currently under development. Feel free to contribute. 
 
 [https://srtt.me](https://srtt.me)
 
@@ -27,10 +25,10 @@
 * RESTful API. (Coming soon)
 
 ## Technologies
-* NodeJS (Web server)
+* Mongo DB (Database)
 * Express (Web server framework)
 * AngularJS (UI framework)
-* Mongo DB (Database)
+* NodeJS (Web server)
 
 ## Setup
 You need to have [Node.js](https://nodejs.org/), [Angular.JS](https://angular.io/) and [MongoDB](https://www.mongodb.com/) installed on your machine.
