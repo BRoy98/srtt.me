@@ -10,8 +10,8 @@ cache:
 build:
   stage: build
   script:
-    - npm install
     - cd client
+    - cat $NG_CONFIG >> "$(pwd)/src/environments/config.ts"
     - npm install
     - npm install -g @angular/cli
     - ng build --aot --prod
