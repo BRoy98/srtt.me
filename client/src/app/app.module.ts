@@ -9,6 +9,7 @@ import {
   SocialLoginModule,
   AuthServiceConfig,
   GoogleLoginProvider,
+  FacebookLoginProvider
 } from 'angular-6-social-login';
 import { config } from 'src/environments/config';
 import { HomeComponent } from './pages/home/home.component';
@@ -24,6 +25,10 @@ export function getAuthServiceConfigs() {
       {
         id: GoogleLoginProvider.PROVIDER_ID,
         provider: new GoogleLoginProvider(config.GOOGLE_LOGIN_CLIENT_ID)
+      },
+      {
+        id: FacebookLoginProvider.PROVIDER_ID,
+        provider: new FacebookLoginProvider(config.FACEBOOK_APP_ID)
       },
     ]
   );
