@@ -23,7 +23,7 @@ const routes: Routes = [{
       component: ContactUsComponent,
     },
     {
-      path: 'privacy-policy',
+      path: 'privacy',
       component: PrivacyPolicyComponent,
     },
   ]
