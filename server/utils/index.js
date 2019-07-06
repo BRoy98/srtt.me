@@ -18,10 +18,10 @@ exports.generateUrl = (count) => {
 };
 
 exports.preservedUrls = [
-    'login',
-    'contact',
-    '404',
-    'verify',
-    'terms',
-    'privacy',
+    '/signin',
+    '/contact',
+    '/404',
+    '/verify',
+    '/terms',
+    '/privacy',
 ];

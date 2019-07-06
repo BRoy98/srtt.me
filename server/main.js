@@ -39,15 +39,15 @@ app.use((req, res, next) => {
     return next();
 });
 
-// serve frontend
+// serve frontend files
 app.use(express.static(path.join(__dirname + '/../client/dist/srtt')));
 
 // frontend routes
 app.get(preservedUrls, (req, res) => {
-    res.sendFile(path.resolve('client/dist/srtt/index.html'));
+    return res.sendFile(path.resolve(__dirname + '/../client/dist/srtt/index.html'));
 });
 
-app.use('/api/', require('./routes'));
+app.use('/', require('./routes'));
 
 app.get('/:id', (req, res) => {
     const url = req.params.id;
@@ -59,6 +59,17 @@ app.get('/:id', (req, res) => {
                 return res.redirect('/404');
             return res.status(301).redirect(urlData.destUrl);
         });
+});
+
+app.get('**', (req, res) => {
+    return res.redirect('/404');
+});
+
+app.post('**', (req, res) => {
+    return res.status(404).json({
+        status: 'fail',
+        error: 'Route not found'
+    });
 });
 
 app.listen(config.PORT, err => {

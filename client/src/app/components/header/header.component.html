@@ -5,11 +5,11 @@
       <a class="nav-link" href="https://github.com/BRoy98/srtt.me" target="_blank">github</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#" [routerLink]="[ '/contact']">contact us</a>
+      <a class="nav-link" [routerLink]="[ '/contact']">contact us</a>
     </li>
     <li class="nav-item">
       <div class="login-parent">
-        <a class="login-button" href="#" (click)="toggleSignIn()">
+        <a class="login-button" (click)="toggleSignIn()">
           <span *ngIf="!signInInput">Sign in / Join</span>
           <span *ngIf="signInInput">
             <svg version="1.1" height="14px" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
