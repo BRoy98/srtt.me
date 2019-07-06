@@ -2,7 +2,7 @@
 
 [![Contributions](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](https://github.com/BRoy98/srtt.me/#contributing)
 [![GitHub license](https://img.shields.io/github/license/BRoy98/srtt.me.svg)](https://github.com/BRoy98/srtt.me/blob/develop/LICENSE)
-[![pipeline status](https://gitlab.com/BRoy98/srtt-me/badges/master/pipeline.svg)](https://gitlab.com/BRoy98/srtt-me/commits/master)
+[![pipeline status](https://gitlab.com/BRoy98/srtt-me/badges/master/pipeline.svg)](https://gitlab.com/BRoy98/srtt-me/pipelines)
 
 **Srtt.me** is a URL shortener built with MEAN Stack. It is currently under development. Feel free to contribute. 
 
@@ -42,6 +42,6 @@ You need to have [Node.js](https://nodejs.org/), [Angular.JS](https://angular.io
 API docs will be updated soon
 
 ## Contributing
-Pull requests are welcome.
+Feel free to contribute on this project and make pull requests.
 
-Open issues for feedback, requesting features or reporting bugs.
+Open issues for bug reports or feature requests.
