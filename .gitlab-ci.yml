@@ -5,7 +5,7 @@ stages:
 
 cache:
   paths:
-    - node_modules/
+    - client/node_modules/
 
 build:
   stage: build
