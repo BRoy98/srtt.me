@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,8 +7,8 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  showSignIn = false;
   @Output() signInEvent = new EventEmitter<boolean>();
+  @Input() signInInput: boolean;
 
   constructor() { }
 
@@ -16,8 +16,8 @@ export class HeaderComponent implements OnInit {
   }
 
   toggleSignIn() {
-    this.showSignIn = !this.showSignIn;
-    this.signInEvent.emit(this.showSignIn);
+    this.signInInput = !this.signInInput;
+    this.signInEvent.emit(this.signInInput);
   }
 
 }

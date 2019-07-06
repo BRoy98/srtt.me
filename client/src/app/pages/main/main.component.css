@@ -36,20 +36,20 @@
   position: relative;
 }
 
-
-@media only screen and (max-width: 1000px) {
-  .column.main {
-    width: 0%;
-    display: none;
-  }
-
-  .column.signin {
-    width: 100%;
-  }
+.column.signin.collapsed .card-body {
+  display: none;
 }
 
 
 /* Sign in */
+
+.column.signin .close-btn {
+  box-shadow: 0 0 0;
+  width: fit-content;
+  right: 0;
+  margin-left: auto;
+  display: none;
+}
 
 .card-signin {
   border: 0;
@@ -161,7 +161,9 @@
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 13px 10px rgba(0, 0, 0, 0.1);
 }
 
-button {
+button,
+button:focus,
+button:active {
   border: 0px;
   height: 48px;
   font-size: 17px;
@@ -175,8 +177,30 @@ button:hover {
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 13px 10px rgba(0, 0, 0, 0.22);
 }
 
-button:focus {
-  border: 0px;
-  transform: scale(1.05);
-  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 13px 10px rgba(0, 0, 0, 0.22);
+
+
+
+@media only screen and (max-width: 1000px) {
+  .column.main {
+    width: 0%;
+    display: none;
+  }
+
+  .column.signin {
+    width: 100%;
+  }
+
+  .column.signin .close-btn {
+    box-shadow: 0 0 0;
+    width: fit-content;
+    right: 0;
+    margin-left: auto;
+    display: block;
+  }
+
+  .card .card-title {
+    margin-top: 0;
+    padding-top: 0;
+    font-size: 30px;
+  }
 }

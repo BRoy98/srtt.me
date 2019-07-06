@@ -10,8 +10,8 @@
     <li class="nav-item">
       <div class="login-parent">
         <a class="login-button" href="#" (click)="toggleSignIn()">
-          <span *ngIf="!showSignIn">Sign in / Join</span>
-          <span *ngIf="showSignIn">
+          <span *ngIf="!signInInput">Sign in / Join</span>
+          <span *ngIf="signInInput">
             <svg version="1.1" height="14px" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
               xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 212.982 212.982"
               style="enable-background:new 0 0 212.982 212.982;" xml:space="preserve">
@@ -22,7 +22,6 @@
                c6.989,6.99,18.322,6.99,25.312,0c6.99-6.99,6.99-18.322,0-25.312L131.804,106.491z" />
               </g>
             </svg>
-
           </span>
         </a>
       </div>

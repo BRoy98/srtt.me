@@ -21,8 +21,8 @@ export class MainComponent implements AfterViewInit {
   ngAfterViewInit() {
   }
 
-  getSignInState($event) {
-    this.showSignIn = $event;
+  toggleSignIn() {
+    this.showSignIn = !this.showSignIn;
   }
 
   public socialSignIn(socialPlatform: string) {
