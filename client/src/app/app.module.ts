@@ -17,6 +17,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { MainComponent } from './pages/main/main.component';
+import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
 
 // Configs
 export function getAuthServiceConfigs() {
@@ -42,7 +43,8 @@ export function getAuthServiceConfigs() {
     HeaderComponent,
     NotFoundComponent,
     ContactUsComponent,
-    MainComponent
+    MainComponent,
+    PrivacyPolicyComponent
   ],
   imports: [
     BrowserModule,

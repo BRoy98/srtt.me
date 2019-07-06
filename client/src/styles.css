@@ -7,6 +7,14 @@ body {
   font-family: 'Overpass', sans-serif;
 }
 
+.page-title {
+  color: #36456A;
+  text-align: center;
+  font-weight: 600;
+  font-size: 2.5rem;
+  padding-top: 1rem;
+}
+
 /* Spin animation */
 @-moz-keyframes spin {
   100% {
