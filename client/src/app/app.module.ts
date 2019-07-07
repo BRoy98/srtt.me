@@ -18,6 +18,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { MainComponent } from './pages/main/main.component';
 import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
+import { HttpClientModule } from '@angular/common/http';
 
 // Configs
 export function getAuthServiceConfigs() {
@@ -35,7 +36,6 @@ export function getAuthServiceConfigs() {
   );
   return authConfig;
 }
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,6 +50,7 @@ export function getAuthServiceConfigs() {
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     ClipboardModule,
     SocialLoginModule
   ],

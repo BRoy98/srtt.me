@@ -68,10 +68,20 @@
   font-size: 13px;
 }
 
-.social-parent .btn .icon .google {
+.social-parent .btn .icon .logogo {
   position: absolute;
   left: 5px;
   top: 1.2px;
+}
+
+.social-parent .btn .icon .loading {
+  margin: 10px;
+  -webkit-animation: spin 1.4s linear infinite;
+  -moz-animation: spin 1.4s linear infinite;
+  animation: spin 1.4s linear infinite;
+}
+
+.social-parent .btn .icon .google {
   padding: 9px;
 }
 
@@ -149,12 +159,12 @@
   /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); */
 }
 
-.form-signin input:hover {
+.form-signin input:hover:not(.disabled) {
   transform: scale(1.03);
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 13px 10px rgba(0, 0, 0, 0.1);
 }
 
-.form-signin input:focus {
+.form-signin input:focus:not(.disabled) {
   border: 0px;
   transform: scale(1.03);
   border: 0.5px #0000000d solid;
@@ -172,12 +182,10 @@ button:active {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
-button:hover {
+button:hover:not(.disabled) {
   transform: scale(1.05);
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 13px 10px rgba(0, 0, 0, 0.22);
 }
-
-
 
 
 @media only screen and (max-width: 1000px) {
