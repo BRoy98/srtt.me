@@ -4,7 +4,7 @@ html {
 
 body {
   background-color: #fff;
-  font-family: 'Overpass', sans-serif;
+  font-family: 'Overpass', sans-serif !important;
 }
 
 .page-title {
