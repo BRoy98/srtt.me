@@ -7,7 +7,7 @@ const {
 
 let Url = require('../models/url');
 
-router.post('/new', (req, res, next) => {
+router.post('/new', (req, res) => {
 
     const destUrl = req.body.destUrl;
 
@@ -60,7 +60,11 @@ router.post('/new', (req, res, next) => {
     });
 });
 
-router.post('*', (req, res, next) => {
+router.get('**', (req, res, next) => {
+    next();
+});
+
+router.post('**', (req, res, next) => {
     next();
 });
 
