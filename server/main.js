@@ -47,7 +47,7 @@ app.get(preservedUrls, (req, res) => {
     return res.sendFile(path.resolve(__dirname + '/../client/dist/srtt/index.html'));
 });
 
-app.use('/', require('./routes'));
+app.use('/api', require('./routes'));
 
 app.get('/:id', (req, res) => {
     const url = req.params.id;

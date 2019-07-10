@@ -4,12 +4,13 @@ const router = express.Router();
 const {
     generateUrl
 } = require('../utils');
+const config = require('../config');
 
 let Url = require('../models/url');
 
 router.post('/new', (req, res) => {
 
-    const destUrl = req.body.destUrl;
+    const destUrl = req.body.url;
 
     // Validate URL existence
     if (!destUrl)
@@ -21,7 +22,6 @@ router.post('/new', (req, res) => {
     // Validate URL
     const isValidUrl = urlRegex({
         exact: true,
-        strict: false
     }).test(destUrl);
     if (!isValidUrl) return res.status(400).json({
         result: 'fail',
@@ -35,7 +35,6 @@ router.post('/new', (req, res) => {
             error: 'Maximum URL length is 2000.'
         });
     }
-
 
     // Create database entry
     const newUrl = new Url({
@@ -54,7 +53,7 @@ router.post('/new', (req, res) => {
                 result: 'success',
                 createdAt: save.createdAt,
                 shortId: save.shortId,
-                shortUrl: 'https://srtt.me/' + save.shortId,
+                shortUrl: 'https://' + config.DEFAULT_DOMAIN + '/' + save.shortId,
                 destUrl: destUrl
             });
     });

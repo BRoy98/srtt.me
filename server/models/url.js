@@ -16,7 +16,7 @@ const urlSchema = mongoose.Schema({
     password: {
         type: String,
         required: false,
-        default: 'false'
+        default: ''
     },
     createdAt: {
         type: Date,
