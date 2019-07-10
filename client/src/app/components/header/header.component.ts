@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
-import { AppAuthService } from 'src/app/services/network/auth/auth.service';
+import { NetworkService } from 'src/app/services/network/network.service';
 import { EventListenerService } from 'src/app/services/event-listener/event-listener.service';
 
 @Component({
@@ -14,15 +14,15 @@ export class HeaderComponent implements OnInit {
   isSignedIn = false;
 
   constructor(
-    private authService: AppAuthService,
+    private networkService: NetworkService,
     private eventListener: EventListenerService) { }
 
   ngOnInit() {
-    if (this.authService.isAuthenticated()) {
+    if (this.networkService.isAuthenticated()) {
       this.isSignedIn = true;
     }
     this.eventListener.loginChange.subscribe(() => {
-      if (this.authService.isAuthenticated()) {
+      if (this.networkService.isAuthenticated()) {
         this.isSignedIn = true;
         this.signInInput = !this.signInInput;
         this.signInEvent.emit(this.signInInput);
@@ -31,7 +31,7 @@ export class HeaderComponent implements OnInit {
   }
 
   toggleSignIn() {
-    if (!this.authService.isAuthenticated()) {
+    if (!this.networkService.isAuthenticated()) {
       this.signInInput = !this.signInInput;
       this.signInEvent.emit(this.signInInput);
     } else { }

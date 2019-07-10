@@ -5,7 +5,7 @@ import {
   GoogleLoginProvider,
   FacebookLoginProvider
 } from 'angular-6-social-login';
-import { AppAuthService } from 'src/app/services/network/auth/auth.service';
+import { NetworkService } from 'src/app/services/network/network.service';
 import { EventListenerService } from 'src/app/services/event-listener/event-listener.service';
 
 @Component({
@@ -24,13 +24,18 @@ export class MainComponent implements AfterViewInit {
 
   constructor(private socialAuthService: AuthService,
     private eventListener: EventListenerService,
-    private appAuthService: AppAuthService) { }
+    private appAuthService: NetworkService) { }
 
   ngAfterViewInit() {
   }
 
   toggleSignIn() {
     this.showSignIn = !this.showSignIn;
+    if (!this.showSignIn) {
+      this.googleSigningIn = false;
+      this.fbSigningIn = false;
+      this.emailSigningIn = false;
+    }
   }
 
   public socialSignIn(socialPlatform: string) {
@@ -65,9 +70,6 @@ export class MainComponent implements AfterViewInit {
             );
             break;
         }
-      },
-      err => {
-        console.log('errorrrrr' + err);
       }
     );
   }
