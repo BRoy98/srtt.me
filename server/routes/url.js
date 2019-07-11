@@ -22,6 +22,7 @@ router.post('/new', (req, res) => {
     // Validate URL
     const isValidUrl = urlRegex({
         exact: true,
+        strict: false
     }).test(destUrl);
     if (!isValidUrl) return res.status(400).json({
         result: 'fail',
