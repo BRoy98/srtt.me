@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
-import { NetworkService } from 'src/app/services/network/network.service';
-import { EventListenerService } from 'src/app/services/event-listener/event-listener.service';
+import { NetworkService } from 'src/app/services/network.service';
+import { EventListenerService } from 'src/app/services/event-listener.service';
 
 @Component({
   selector: 'app-header',

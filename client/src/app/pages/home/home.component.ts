@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NetworkService } from 'src/app/services/network/network.service';
+import { NetworkService } from 'src/app/services/network.service';
 
 @Component({
   selector: 'app-home',

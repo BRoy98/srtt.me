@@ -5,8 +5,8 @@ import {
   GoogleLoginProvider,
   FacebookLoginProvider
 } from 'angular-6-social-login';
-import { NetworkService } from 'src/app/services/network/network.service';
-import { EventListenerService } from 'src/app/services/event-listener/event-listener.service';
+import { NetworkService } from 'src/app/services/network.service';
+import { EventListenerService } from 'src/app/services/event-listener.service';
 
 @Component({
   selector: 'app-main',

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router, CanActivate } from '@angular/router';
-import { NetworkService } from '../network/network.service';
+import { NetworkService } from '../network.service';
 
 @Injectable({
   providedIn: 'root'
