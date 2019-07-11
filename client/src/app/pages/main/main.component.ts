@@ -4,7 +4,7 @@ import {
   AuthService,
   GoogleLoginProvider,
   FacebookLoginProvider
-} from 'angular-6-social-login';
+} from 'angularx-social-login';
 import { NetworkService } from 'src/app/services/network.service';
 import { EventListenerService } from 'src/app/services/event-listener.service';
 

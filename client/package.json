@@ -21,7 +21,7 @@
     "@angular/platform-browser-dynamic": "~7.0.0",
     "@angular/router": "~7.0.0",
     "@auth0/angular-jwt": "^2.1.1",
-    "angular-6-social-login": "^1.1.1",
+    "angularx-social-login": "^1.2.7",
     "bootstrap": "^4.3.1",
     "core-js": "^2.5.4",
     "jquery": "^3.4.1",
@@ -30,7 +30,7 @@
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.10.0",
+    "@angular-devkit/build-angular": "^0.10.7",
     "@angular/cli": "~7.0.6",
     "@angular/compiler-cli": "~7.0.0",
     "@angular/language-service": "~7.0.0",

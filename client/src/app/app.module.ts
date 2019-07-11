@@ -10,7 +10,7 @@ import {
   AuthServiceConfig,
   GoogleLoginProvider,
   FacebookLoginProvider
-} from 'angular-6-social-login';
+} from 'angularx-social-login';
 import { config } from 'src/environments/config';
 import { HomeComponent } from './pages/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
