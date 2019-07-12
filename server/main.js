@@ -57,6 +57,10 @@ app.get('/:id', (req, res) => {
         .then(urlData => {
             if (!urlData)
                 return res.redirect('/404');
+            var url = urlData.destUrl;
+            if (!/^https?:\/\//i.test(url) && !/^http?:\/\//i.test(url)) {
+                url = 'http://' + url;
+            }
             return res.status(301).redirect(urlData.destUrl);
         });
 });
