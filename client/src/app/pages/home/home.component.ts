@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
   public urlSubmitting = false;
   public recaptchaSiteKey = config.RECAPTCHA_SITE_KEY;
 
-  @ViewChild('captchaRef') captchaRef;
+  @ViewChild('captchaRef', { static: false }) captchaRef;
 
   constructor(
     private networkService: NetworkService

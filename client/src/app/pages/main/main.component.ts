@@ -15,7 +15,7 @@ import { EventListenerService } from 'src/app/services/event-listener.service';
 })
 export class MainComponent implements AfterViewInit {
 
-  @ViewChild(HeaderComponent) header;
+  @ViewChild(HeaderComponent, { static: false }) header;
   showSignIn = false;
 
   googleSigningIn = false;
