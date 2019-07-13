@@ -5,8 +5,8 @@
   <div class="form-holder">
     <form class="submit-form" #captchaProtectedForm="ngForm">
       <div class="input-group url">
-        <input type="text" class="form-control url-input" name="url" placeholder="Paste your URL" autocomplete="off"
-          [(ngModel)]="urlData.url">
+        <input type="text" class="form-control url-input" [disabled]='urlSubmitting' name="url"
+          placeholder="Paste your URL" autocomplete="off" [(ngModel)]="urlData.url">
         <span class="input-group-btn">
           <button class="btn btn-default url-submit" type="button" (click)="submitPress()">
             <span *ngIf="!urlSubmitting">

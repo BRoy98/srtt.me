@@ -40,7 +40,7 @@ export class HomeComponent implements OnInit {
   }
 
   submitUrl() {
-    if (this.urlData.url.length < 1) {
+    if (this.urlData.url.length < 1 || this.urlData.captcha === null) {
       return;
     }
     this.urlSubmitting = true;
