@@ -14,4 +14,7 @@ module.exports = {
 
     /* Secret passphrase for generating JWT keys */
     JWT_SECRET: '',
+
+    /* reCaptcha v2 secret key */
+    RECAPTCHA_SECRET_KEY: '',
 };

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { NetworkService } from 'src/app/services/network.service';
+import { config } from 'src/environments/config';
 
 @Component({
   selector: 'app-home',
@@ -10,11 +11,15 @@ export class HomeComponent implements OnInit {
 
   urlData = {
     url: '',
+    captcha: ''
   };
 
-  urlSubmitting = false;
-  warnMsg = '';
-  localUrls = [];
+  public warnMsg = '';
+  public localUrls = [];
+  public urlSubmitting = false;
+  public recaptchaSiteKey = config.RECAPTCHA_SITE_KEY;
+
+  @ViewChild('captchaRef') captchaRef;
 
   constructor(
     private networkService: NetworkService
@@ -25,7 +30,16 @@ export class HomeComponent implements OnInit {
     this.localUrls = localData === null ? [] : localData;
   }
 
-  onUrlSubmit() {
+  submitPress() {
+    this.warnMsg = '';
+    if (this.urlData.url.length > 0) {
+      this.urlSubmitting = true;
+      this.captchaRef.reset();
+      this.captchaRef.execute();
+    }
+  }
+
+  submitUrl() {
     if (this.urlData.url.length < 1) {
       return;
     }
