@@ -3,12 +3,12 @@
     S<div class="desc-fade">ho</div>rtt your URLs. Smartly.
   </div>
   <div class="form-holder">
-    <form class="submit-form">
+    <form class="submit-form" #captchaProtectedForm="ngForm">
       <div class="input-group url">
         <input type="text" class="form-control url-input" name="url" placeholder="Paste your URL" autocomplete="off"
           [(ngModel)]="urlData.url">
         <span class="input-group-btn">
-          <button class="btn btn-default url-submit" type="button" (click)="onUrlSubmit()">
+          <button class="btn btn-default url-submit" type="button" (click)="submitPress()">
             <span *ngIf="!urlSubmitting">
               <svg height="40px" viewBox="0 -66 511.9995 511" width="40px" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -86,3 +86,5 @@
     </ul>
   </div>
 </div>
+<re-captcha #captchaRef="reCaptcha" [(ngModel)]="urlData.captcha" (resolved)="submitUrl()" [siteKey]="recaptchaSiteKey"
+  size="invisible" #captchaControl="ngModel"></re-captcha>

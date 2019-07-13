@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { ClipboardModule } from 'ngx-clipboard';
+import { RecaptchaModule } from 'ng-recaptcha';
+import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
 import {
   SocialLoginModule,
   AuthServiceConfig,
@@ -52,7 +54,9 @@ export function getAuthServiceConfigs() {
     FormsModule,
     HttpClientModule,
     ClipboardModule,
-    SocialLoginModule
+    SocialLoginModule,
+    RecaptchaModule,
+    RecaptchaFormsModule
   ],
   providers: [
     {
