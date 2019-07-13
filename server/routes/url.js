@@ -13,6 +13,7 @@ router.post('/new', (req, res) => {
 
     const destUrl = req.body.url;
     const captcha = req.body.captcha;
+    var remoteIp = (req.headers['x-real-ip'] || req.connection.remoteAddress || '').split(',')[0].trim();
 
     // Validate URL existence
     if (!destUrl)
@@ -39,6 +40,15 @@ router.post('/new', (req, res) => {
         });
     }
 
+    // Set reCaptcha parameters
+    var reCaptchaParam = {
+        secret: config.RECAPTCHA_SECRET_KEY,
+        response: captcha,
+    };
+    if (process.env.NODE_ENV == 'production') {
+        reCaptchaParam.remoteip = remoteIp;
+    }
+
     // Request to recaptcha api for captcha verification
     axios({
         method: 'post',
@@ -46,10 +56,7 @@ router.post('/new', (req, res) => {
         headers: {
             'Content-type': 'application/x-www-form-urlencoded',
         },
-        params: {
-            secret: config.RECAPTCHA_SECRET_KEY,
-            response: captcha,
-        },
+        params: reCaptchaParam,
     }).then(function (response) {
 
         // Recaptcha verification failed

@@ -5,7 +5,7 @@
     "main": "./server/main.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start-api": "nodemon ./server/main.js",
+        "start-api": "NODE_ENV=development nodemon ./server/main.js",
         "start-srtt": "cd client && ng serve",
         "start": "concurrently npm:start-*",
         "build": "cd client && ng build --prod --aot"
