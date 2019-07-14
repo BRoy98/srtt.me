@@ -47,6 +47,7 @@ export class MainComponent implements AfterViewInit {
       this.googleSigningIn = true;
       socialPlatformProvider = GoogleLoginProvider.PROVIDER_ID;
     } else if (socialPlatform === 'facebook') {
+      this.fbSigningIn = true;
       socialPlatformProvider = FacebookLoginProvider.PROVIDER_ID;
     }
 
@@ -54,7 +55,7 @@ export class MainComponent implements AfterViewInit {
       userData => {
         switch (socialPlatform) {
           case 'google':
-            this.appAuthService.googleLogin({ id_token: userData.idToken }).subscribe(
+            this.appAuthService.socialLogin({ signinData: userData }, 'google').subscribe(
               res => {
                 if (res.status === 'success') {
                   localStorage.setItem('token', res.token);
@@ -65,7 +66,23 @@ export class MainComponent implements AfterViewInit {
                 }
               },
               err => {
-                console.log('error', err);
+                this.googleSigningIn = false;
+              }
+            );
+            break;
+          case 'facebook':
+            this.appAuthService.socialLogin({ signinData: userData }, 'facebook').subscribe(
+              res => {
+                if (res.status === 'success') {
+                  localStorage.setItem('token', res.token);
+                  localStorage.setItem('name', res.name);
+                  localStorage.setItem('email', res.email);
+                  this.fbSigningIn = false;
+                  this.eventListener.loginChanged();
+                }
+              },
+              err => {
+                this.fbSigningIn = false;
               }
             );
             break;

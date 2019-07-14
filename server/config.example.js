@@ -12,6 +12,12 @@ module.exports = {
     /* Google Login Client ID */
     GOOGLE_LOGIN_CLIENT_ID: '',
 
+    /* 
+      Facebook Access token 
+      Get your access token from https://developers.facebook.com/tools/accesstoken
+    */
+    FACEBOOK_APP_ACCESS_TOKEN: '',
+
     /* Secret passphrase for generating JWT keys */
     JWT_SECRET: '',
 

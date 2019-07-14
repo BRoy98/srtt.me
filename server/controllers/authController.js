@@ -6,7 +6,7 @@ let User = require('../models/user');
 /**
  * Sign in a user
  */
-const signin = async (req, res) => {
+const socialSignin = async (req, res) => {
 
     // Check for the user existance
     let signinUser = await User.findOne({
@@ -34,12 +34,34 @@ const signin = async (req, res) => {
                     });
 
                     if (!updateUser)
-                        res.status(200).json({
+                        return res.status(200).json({
                             status: 'fail',
                             error: 'Failed to sign in with Google'
                         });
                 }
                 break;
+            case 'facebook':
+                if (!signinUser.providerStatus.facebook &&
+                    signinUser.providerId.facebook !== req.userdata.verify.user_id) {
+
+                    // Update user data with google account detials
+                    let updateUser = await User.findOneAndUpdate({
+                        "email": req.userdata.email
+                    }, {
+                        $set: {
+                            "providerId.facebook": req.userdata.verify.user_id,
+                            "providerStatus.facebook": true
+                        }
+                    });
+
+                    if (!updateUser)
+                        return res.status(200).json({
+                            status: 'fail',
+                            error: 'Failed to sign in with Google'
+                        });
+                }
+                break;
+
         }
 
         return res.status(200).json({
@@ -92,5 +114,5 @@ const getJwt = async (name, email) => {
 }
 
 module.exports = {
-    signin: signin
+    socialSignin: socialSignin
 }

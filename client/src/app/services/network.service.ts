@@ -26,8 +26,8 @@ export class NetworkService {
      * Auth related queries
      */
 
-    googleLogin(login_data) {
-        return this.http.post<any>('/api/auth/google/signin', login_data);
+    socialLogin(loginData, provider) {
+        return this.http.post<any>('/api/auth/' + provider + '/signin', loginData);
     }
 
     public isAuthenticated(): boolean {

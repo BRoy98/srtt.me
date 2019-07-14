@@ -17,10 +17,18 @@ const userSchema = mongoose.Schema({
         google: {
             type: String,
             required: false
+        },
+        facebook: {
+            type: String,
+            required: false
         }
     },
     providerStatus: {
         google: {
+            type: Boolean,
+            required: false
+        },
+        facebook: {
             type: Boolean,
             required: false
         }
