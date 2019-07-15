@@ -3,7 +3,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { ClipboardModule } from 'ngx-clipboard';
 import { RecaptchaModule } from 'ng-recaptcha';
@@ -41,7 +40,6 @@ export function getAuthServiceConfigs() {
 }
 @NgModule({
   declarations: [
-    AppComponent,
     HomeComponent,
     HeaderComponent,
     NotFoundComponent,
@@ -66,6 +64,6 @@ export function getAuthServiceConfigs() {
       useFactory: getAuthServiceConfigs
     }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [MainComponent]
 })
 export class AppModule { }
