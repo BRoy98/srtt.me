@@ -1,7 +1,9 @@
 <div class="home-row">
   <div class="column main" [ngClass]="{'expand': !showSignIn}">
     <app-header (signInEvent)="toggleSignIn()" [signInInput]="showSignIn"></app-header>
-    <router-outlet></router-outlet>
+    <div class="route-parent" [@fadeAnimation]="o.isActivated ? o.activatedRoute : ''">
+      <router-outlet class="route-outlet" #o="outlet"></router-outlet>
+    </div>
   </div>
   <div class="column signin" [ngClass]="{'collapsed': !showSignIn}">
     <button class="btn btn-block close-btn" (click)="toggleSignIn()">

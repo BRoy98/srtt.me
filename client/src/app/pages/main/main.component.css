@@ -40,6 +40,10 @@
   display: none;
 }
 
+.route-parent {
+  position: relative;
+  width: 100%
+}
 
 /* Sign in */
 

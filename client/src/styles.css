@@ -15,6 +15,12 @@ body {
   padding-top: 1rem;
 }
 
+.route-outlet~* {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
 /* Spin animation */
 @-moz-keyframes spin {
   100% {

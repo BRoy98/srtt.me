@@ -7,11 +7,13 @@ import {
 } from 'angularx-social-login';
 import { NetworkService } from 'src/app/services/network.service';
 import { EventListenerService } from 'src/app/services/event-listener.service';
+import { fadeAnimation } from 'src/app/animations/animations';
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
-  styleUrls: ['./main.component.css']
+  styleUrls: ['./main.component.css'],
+  animations: [fadeAnimation]
 })
 export class MainComponent implements AfterViewInit {
 
