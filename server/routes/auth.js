@@ -51,8 +51,6 @@ router.post('/facebook/signin', (req, res, next) => {
             '&access_token=' + config.FACEBOOK_APP_ACCESS_TOKEN,
     }).then((user) => {
         user.data = user.data.data;
-        console.log('Fb 1', signinData);
-        console.log('Fb 2', user.data);
 
         // Verify the user id with the facebook returned id
         if (req.body.signinData.facebook.id != user.data.user_id) {
