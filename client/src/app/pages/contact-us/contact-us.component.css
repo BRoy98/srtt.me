@@ -1,1 +1,79 @@
+.contact-card {
+  max-width: 500px;
+  margin: auto;
+}
 
+.form-contact * {
+  margin: 20px 0;
+}
+
+.form-contact input {
+  border: 0px;
+  height: 48px;
+  padding: 6px 20px;
+  border-radius: 25px;
+  border: 0.5px #0000000d solid;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
+  transition: 0.3s ease-in-out all;
+}
+
+.form-contact textarea {
+  border: 0px;
+  padding: 14px 20px;
+  border-radius: 25px;
+  border: 0.5px #0000000d solid;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
+  transition: 0.3s ease-in-out all;
+}
+
+.form-contact input:hover:not(.disabled),
+textarea:hover:not(.disabled) {
+  transform: scale(1.03);
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 13px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-contact input:focus:not(.disabled),
+textarea:focus:not(.disabled) {
+  border: 0px;
+  transform: scale(1.03);
+  border: 0.5px #0000000d solid;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 13px 10px rgba(0, 0, 0, 0.1);
+}
+
+button,
+button:focus,
+button:active {
+  border: 0px;
+  height: 48px;
+  font-size: 17px;
+  border-radius: 25px;
+  transition: 0.3s ease-in-out all;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+button:hover:not(.disabled) {
+  transform: scale(1.05);
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 13px 10px rgba(0, 0, 0, 0.22);
+}
+
+.btn .loading {
+  -webkit-animation: spin 1.4s linear infinite;
+  -moz-animation: spin 1.4s linear infinite;
+  animation: spin 1.4s linear infinite;
+}
+
+.link-warn {
+  color: rgb(255, 0, 0);
+  margin: auto;
+  text-align: center;
+  margin: 8px 0 -8px;
+  transition: 0.3s ease-in-out;
+}
+
+.link-success {
+  color: #08a710;
+  margin: auto;
+  text-align: center;
+  margin: 8px 0 -8px;
+  transition: 0.3s ease-in-out;
+}

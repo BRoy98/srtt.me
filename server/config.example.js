@@ -23,4 +23,27 @@ module.exports = {
 
   /* reCaptcha v2 secret key */
   RECAPTCHA_SECRET_KEY: '',
+
+  /* SMTP Mail server host */
+  MAIL_SERVER_HOST: '',
+
+  /* SMTP Mail server port */
+  MAIL_SERVER_PORT: '',
+
+  /* SMTP Mail secure server: true/false */
+  MAIL_SERVER_SECURE: '',
+
+  /* SMTP Mail server user id */
+  MAIL_SERVER_AUTH_USER: '',
+
+  /* SMTP Mail server user password */
+  MAIL_SERVER_AUTH_PASSWORD: '',
+
+  /* Mail sending id 
+  Format: "srtt.me <noreply@srtt.me>" */
+  MAIL_FROM: '',
+
+  /* Receiving mail for contact form
+  Format: support@srtt.me" */
+  MAIL_CONTACT_TO: '',
 };

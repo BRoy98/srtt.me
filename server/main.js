@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const helmet = require('helmet');
 const morgan = require('morgan');
 const path = require('path');
+const transporter = require('./utils/mail');
 const config = require('./config');
 const cors = require('cors');
 const {
@@ -23,6 +24,15 @@ let db = mongoose.connection;
 // Check connection
 db.once('open', function () {
     console.log('> Connected to MongoDB');
+});
+
+transporter.verify(function (error) {
+    if (error) {
+        console.log("> SMTP connection fail");
+        console.log(error);
+    } else {
+        console.log("> SMTP connection success");
+    }
 });
 
 // Security headers

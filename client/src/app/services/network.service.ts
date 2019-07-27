@@ -18,8 +18,12 @@ export class NetworkService {
      * Url related queries
      */
 
-    newUrl(url) {
-        return this.http.post<any>('/api/url/new', url);
+    newUrl(formData) {
+        return this.http.post<any>('/api/url/new', formData);
+    }
+
+    contactSubmit(formData) {
+        return this.http.post<any>('/api/util/contact', formData);
     }
 
     /**

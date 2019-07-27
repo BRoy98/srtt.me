@@ -7,6 +7,7 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "start-api": "NODE_ENV=development nodemon ./server/main.js",
         "start-srtt": "cd client && ng serve",
+        "start-prod": "yarn run build && yarn run start-api",
         "start": "concurrently npm:start-*",
         "build": "cd client && ng build --prod --aot"
     },
@@ -40,6 +41,7 @@
         "jsonwebtoken": "^8.5.1",
         "mongoose": "^5.6.2",
         "morgan": "^1.9.1",
+        "nodemailer": "^6.3.0",
         "url-regex": "^5.0.0"
     }
 }
