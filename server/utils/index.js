@@ -7,7 +7,7 @@ exports.generateUrl = (count) => {
     }
 
     var url = '';
-    for (i = 0; i < count; i++) {
+    for (var i = 0; i < count; i++) {
         url += 'x';
     }
     return url.replace(/[xy]/g, function (c) {

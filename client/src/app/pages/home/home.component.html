@@ -2,6 +2,8 @@
   <div class="head-desc">
     S<div class="desc-fade">ho</div>rtt your URLs. Smartly.
   </div>
+
+  <!-- URL Form Start -->
   <div class="form-holder">
     <form class="submit-form" #captchaProtectedForm="ngForm">
       <div class="input-group url">
@@ -58,6 +60,9 @@
     </form>
     <div class="link-warn">{{ warnMsg }}</div>
   </div>
+  <!-- URL Form End -->
+
+  <!-- URL List Start -->
   <div class="link-list" *ngIf="localUrls.length > 0">
     <ul class="list-group">
       <li class="list-group-item" *ngFor="let item of localUrls">
@@ -85,6 +90,11 @@
       </li>
     </ul>
   </div>
+  <!-- URL List End -->
+
 </div>
-<re-captcha #captchaRef="reCaptcha" [(ngModel)]="urlData.captcha" (resolved)="submitUrl()" [siteKey]="recaptchaSiteKey"
-  size="invisible" #captchaControl="ngModel"></re-captcha>
+
+<div>
+  <re-captcha #captchaRef="reCaptcha" [(ngModel)]="urlData.captcha" (resolved)="submitUrl()"
+    [siteKey]="recaptchaSiteKey" size="invisible" #captchaControl="ngModel"></re-captcha>
+</div>
