@@ -20,6 +20,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { MainComponent } from './pages/main/main.component';
 import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 
 // Configs
@@ -45,7 +46,8 @@ export function getAuthServiceConfigs() {
     NotFoundComponent,
     ContactUsComponent,
     MainComponent,
-    PrivacyPolicyComponent
+    PrivacyPolicyComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
