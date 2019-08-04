@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { NetworkService } from 'src/app/services/network.service';
 import { EventListenerService } from 'src/app/services/event-listener.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -14,6 +15,7 @@ export class HeaderComponent implements OnInit {
   isSignedIn = false;
 
   constructor(
+    private router: Router,
     private networkService: NetworkService,
     private eventListener: EventListenerService) { }
 
@@ -34,7 +36,9 @@ export class HeaderComponent implements OnInit {
     if (!this.networkService.isAuthenticated()) {
       this.signInInput = !this.signInInput;
       this.signInEvent.emit(this.signInInput);
-    } else { }
+    } else {
+      this.router.navigate(['dashboard']);
+    }
   }
 
 }
