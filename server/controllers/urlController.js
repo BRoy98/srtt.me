@@ -45,9 +45,7 @@ const addUrl = async (req, res) => {
     // Check if short URL already exists
     if (shorturl && shorturl.length) {
         let urlExists = await Url.findOne({
-            where: {
-                shortId: shorturl
-            }
+            shortId: shorturl
         });
 
         if (urlExists) {
