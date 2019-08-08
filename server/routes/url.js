@@ -6,9 +6,10 @@ const {
     generateUrl
 } = require('../utils');
 const config = require('../config');
+const urlController = require('../controllers/urlController');
+const authController = require('../controllers/authController');
 
 let Url = require('../models/url');
-
 router.post('/new', (req, res) => {
 
     const destUrl = req.body.url;
@@ -91,6 +92,8 @@ router.post('/new', (req, res) => {
         });
     });
 });
+
+router.post('/addurl', authController.verifyUser, urlController.addUrl);
 
 router.get('**', (req, res, next) => {
     next();

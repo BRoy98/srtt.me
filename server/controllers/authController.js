@@ -100,6 +100,29 @@ const socialSignin = async (req, res) => {
     }
 };
 
+const verifyUser = (req, res, next) => {
+
+    const token = req.headers.authorization;
+
+    if (token) {
+        jwt.verify(token, config.JWT_SECRET, (err, decoded) => {
+            if (err) {
+                return res.status(400).json({
+                    result: 'fail',
+                    error: 'Please login to continue',
+                });
+            }
+            req.jwtData = decoded;
+            next();
+        });
+    } else {
+        return res.status(400).json({
+            result: 'fail',
+            error: 'You are not allowed to access this API',
+        });
+    }
+}
+
 
 // Genetare JWT token
 const getJwt = async (name, email) => {
@@ -114,5 +137,6 @@ const getJwt = async (name, email) => {
 }
 
 module.exports = {
-    socialSignin: socialSignin
+    socialSignin: socialSignin,
+    verifyUser: verifyUser
 }
