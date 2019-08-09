@@ -21,7 +21,8 @@ import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { MainComponent } from './pages/main/main.component';
 import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpConfigInterceptor } from './services/http.interceptor';
 
 // Configs
 export function getAuthServiceConfigs() {
@@ -61,6 +62,11 @@ export function getAuthServiceConfigs() {
     RecaptchaFormsModule
   ],
   providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpConfigInterceptor,
+      multi: true
+    },
     {
       provide: AuthServiceConfig,
       useFactory: getAuthServiceConfigs

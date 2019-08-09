@@ -22,6 +22,14 @@ export class NetworkService {
         return this.http.post<any>('/api/url/new', formData);
     }
 
+    addUrl(formData) {
+        return this.http.post<any>('/api/url/addurl', formData);
+    }
+
+    getUrls() {
+        return this.http.post<any>('/api/url/geturls', {});
+    }
+
     contactSubmit(formData) {
         return this.http.post<any>('/api/util/contact', formData);
     }
@@ -34,8 +42,16 @@ export class NetworkService {
         return this.http.post<any>('/api/auth/' + provider + '/signin', loginData);
     }
 
+    logout() {
+        localStorage.removeItem('token');
+    }
+
     public isAuthenticated(): boolean {
         const token = localStorage.getItem('token');
         return !this.jwtHelper.isTokenExpired(token);
+    }
+
+    public getAccessToken(): string {
+        return localStorage.getItem('token');
     }
 }
