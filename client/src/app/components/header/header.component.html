@@ -11,8 +11,7 @@
       <div class="login-parent">
         <a class="login-button" (click)="toggleSignIn()">
           <span *ngIf="!signInInput">
-            <span *ngIf="isSignedIn">My Account</span>
-            <span *ngIf="!isSignedIn">Sign in / Join</span>
+            <span>{{ signInText }}</span>
           </span>
           <span *ngIf="signInInput">
             <svg version="1.1" height="14px" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
