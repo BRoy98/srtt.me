@@ -42,6 +42,7 @@
         "mongoose": "^5.6.2",
         "morgan": "^1.9.1",
         "nodemailer": "^6.3.0",
+        "urijs": "^1.19.1",
         "url-regex": "^5.0.0"
     }
 }

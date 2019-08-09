@@ -9,6 +9,7 @@ const path = require('path');
 const transporter = require('./utils/mail');
 const config = require('./config');
 const cors = require('cors');
+var URI = require('urijs');
 const {
     preservedUrls
 } = require('./utils');
@@ -62,17 +63,19 @@ app.use('/api', require('./routes'));
 app.get('/:id', (req, res) => {
     const url = req.params.id;
     Url.findOne({
-            'shortId': url
-        }).exec()
-        .then(urlData => {
-            if (!urlData)
-                return res.redirect('/404');
-            var url = urlData.destUrl;
-            if (!/^https?:\/\//i.test(url) && !/^http?:\/\//i.test(url)) {
-                url = 'http://' + url;
-            }
-            return res.status(301).redirect(urlData.destUrl);
-        });
+        'shortId': url
+    }, (err, urlData) => {
+        if (!urlData)
+            return res.send('/404');
+        var url = urlData.destUrl;
+        console.log(new URI(url).protocol());
+        if (new URI(url).protocol() === "") {
+            url = 'http://' + url;
+        }
+        console.log(url);
+        return res.status(301).redirect(url);
+
+    })
 });
 
 app.get('**', (req, res) => {
