@@ -1,3 +1,93 @@
-<div>
+<div class="container">
+  <!-- URL Form Start -->
+  <div class="form-holder">
+    <div class="main-form">
+      <form class="submit-form">
+        <div class="input-group url">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <svg version="1.1" id="Layer_1" height="44px" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512.001 512.001"
+                style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve">
+                <g>
+                  <path style="fill:#6FC5D6;" d="M82.972,269.94l-50.16,50.16c-43.749,43.749-43.749,115.338,0,159.088s115.338,43.749,159.088,0
+		l50.16-50.16c43.749-43.749,43.749-115.338,0-159.088S126.722,226.191,82.972,269.94z M210.243,397.211l-50.16,50.16
+		c-26.316,26.316-69.137,26.316-95.453,0c-26.316-26.316-26.316-69.137,0-95.453l50.16-50.16c26.316-26.316,69.137-26.316,95.453,0
+		C236.559,328.074,236.559,370.894,210.243,397.211z" />
+                  <path style="fill:#6FC5D6;" d="M320.101,32.812l-50.16,50.16c-43.749,43.749-43.749,115.338,0,159.088s115.338,43.749,159.088,0
+		l50.16-50.16c43.749-43.749,43.749-115.338,0-159.088S363.85-10.937,320.101,32.812z M447.371,160.083l-50.16,50.16
+		c-26.316,26.316-69.137,26.316-95.453,0c-26.316-26.316-26.316-69.137,0-95.453l50.16-50.16c26.316-26.316,69.137-26.316,95.453,0
+		C473.688,90.946,473.688,133.766,447.371,160.083z" />
+                </g>
+                <path style="fill:#609399;" d="M357.449,186.369c8.786-8.787,8.786-23.032,0-31.817c-8.787-8.787-23.032-8.787-31.817,0
+	c-0.588,0.588-170.654,170.654-171.081,171.081c-8.787,8.787-8.787,23.032,0,31.817c8.786,8.786,23.032,8.787,31.817,0
+	C186.776,357.043,356.833,186.986,357.449,186.369z" />
+              </svg>
+            </div>
+          </div>
+          <input type="text" class="form-control url-input" [disabled]='urlSubmitting' name="url"
+            placeholder="Paste your URL" autocomplete="off" [(ngModel)]="urlData.url">
+          <span class="input-group-btn">
+            <button class="btn btn-default url-submit" type="button" (click)="submitPress()">
+              <span *ngIf="!urlSubmitting">
+                Shorten
+              </span>
+              <span *ngIf="urlSubmitting">
+                <div class="lds-ellipsis" style="margin-top: -10px;">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+              </span>
+            </button>
+          </span>
+        </div>
+      </form>
+    </div>
+    <div class="advanced-form row">
+      <div class="left-part col-sm-12">
+        <span class="pre">srtt.me/</span>
+        <input type="text" [(ngModel)]="urlData.shorturl">
+      </div>
+      <!-- <div class="right-part col-sm-6">
+        <span class="pre">Password</span>
+        <input type="text" [(ngModel)]="urlData.shorturl">
+      </div> -->
+
+    </div>
+  </div>
+  <div class="link-warn">{{ warnMsg }}</div>
+  <!-- URL Form End -->
+
+  <!-- URL List Start -->
+  <div class="link-list" *ngIf="userUrls.length > 0">
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let item of userUrls">
+        <div class="url-data">
+          <div class="short-url">
+            <a class="{{item.shortId}}" href="{{item.shortUrl}}" target="_blank">{{item.shortUrl}}</a>
+          </div>
+          <a class="dest-url" href="{{item.destUrl}}" target="_blank">{{item.destUrl}}</a>
+        </div>
+        <button class="btn btn-default action-copy" type="button" ngxClipboard cbContent={{item.shortUrl}}>
+          <svg height="35px" viewBox="-40 0 512 512" width="40px" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink">
+            <linearGradient id="a" gradientUnits="userSpaceOnUse" x1="0" x2="431" y1="256" y2="256">
+              <stop offset="0" stop-color="#87f1fc" />
+              <stop offset=".2557" stop-color="#7fd4fb" />
+              <stop offset=".5295" stop-color="#78bcfb" />
+              <stop offset=".7844" stop-color="#74aefa" />
+              <stop offset="1" stop-color="#73a9fa" />
+            </linearGradient>
+            <path
+              d="m271 512h-191c-44.113281 0-80-35.886719-80-80v-271c0-44.113281 35.886719-80 80-80h191c44.113281 0 80 35.886719 80 80v271c0 44.113281-35.886719 80-80 80zm-191-391c-22.054688 0-40 17.945312-40 40v271c0 22.054688 17.945312 40 40 40h191c22.054688 0 40-17.945312 40-40v-271c0-22.054688-17.945312-40-40-40zm351 261v-302c0-44.113281-35.886719-80-80-80h-222c-11.046875 0-20 8.953125-20 20s8.953125 20 20 20h222c22.054688 0 40 17.945312 40 40v302c0 11.046875 8.953125 20 20 20s20-8.953125 20-20zm0 0"
+              fill="url(#a)" />
+          </svg>
+        </button>
+      </li>
+    </ul>
+  </div>
+  <!-- URL List End -->
 
 </div>
