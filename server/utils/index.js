@@ -24,4 +24,5 @@ exports.preservedUrls = [
     '/verify',
     '/terms',
     '/privacy',
+    '/dashboard',
 ];

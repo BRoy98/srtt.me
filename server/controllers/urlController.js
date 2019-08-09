@@ -6,7 +6,7 @@ const {
 } = require('../utils');
 const config = require('../config');
 
-const addUrl = async (req, res) => {
+exports.addUrl = async (req, res) => {
     const destUrl = req.body.url;
     const shorturl = req.body.shorturl;
 
@@ -69,21 +69,39 @@ const addUrl = async (req, res) => {
     // save the entry to database
     newUrl.save((err, save) => {
         if (err)
-            return res.status(403).json({
+            return res.status(400).json({
                 result: 'fail',
                 error: 'Server unreachable. Please try after some time.',
             });
         if (save)
             return res.status(200).json({
                 result: 'success',
-                createdAt: save.createdAt,
-                shortId: save.shortId,
-                shortUrl: 'https://' + config.DEFAULT_DOMAIN + '/' + save.shortId,
-                destUrl: destUrl
+                urlData: {
+                    createdAt: save.createdAt,
+                    shortId: save.shortId,
+                    shortUrl: 'https://' + config.DEFAULT_DOMAIN + '/' + save.shortId,
+                    destUrl: destUrl
+                }
             });
     });
 }
 
-module.exports = {
-    addUrl: addUrl
+exports.getUrls = async (req, res) => {
+    let userUrls = await Url.find({
+        user: req.jwtData.email
+    });
+
+    var urls = userUrls.map(url => {
+        return Object.assign({}, {
+            createdAt: url.createdAt,
+            shortId: url.shortId,
+            shortUrl: 'https://' + config.DEFAULT_DOMAIN + '/' + url.shortId,
+            destUrl: url.destUrl
+        })
+    })
+
+    return res.status(200).json({
+        result: 'success',
+        urls: urls
+    });
 }

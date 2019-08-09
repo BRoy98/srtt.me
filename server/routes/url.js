@@ -84,16 +84,19 @@ router.post('/new', (req, res) => {
             if (save)
                 return res.status(200).json({
                     result: 'success',
-                    createdAt: save.createdAt,
-                    shortId: save.shortId,
-                    shortUrl: 'https://' + config.DEFAULT_DOMAIN + '/' + save.shortId,
-                    destUrl: destUrl
+                    urlData: {
+                        createdAt: save.createdAt,
+                        shortId: save.shortId,
+                        shortUrl: 'https://' + config.DEFAULT_DOMAIN + '/' + save.shortId,
+                        destUrl: destUrl
+                    }
                 });
         });
     });
 });
-
 router.post('/addurl', authController.verifyUser, urlController.addUrl);
+
+router.post('/geturls', authController.verifyUser, urlController.getUrls);
 
 router.get('**', (req, res, next) => {
     next();
