@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { NetworkService } from 'src/app/services/network.service';
 import { config } from 'src/environments/config';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -22,10 +23,14 @@ export class HomeComponent implements OnInit {
   @ViewChild('captchaRef', { static: false }) captchaRef;
 
   constructor(
-    private networkService: NetworkService
+    private networkService: NetworkService,
+    public router: Router
   ) { }
 
   ngOnInit() {
+    if (this.networkService.isAuthenticated()) {
+      this.router.navigate(['/dashboard']);
+    }
     const localData = JSON.parse(localStorage.getItem('local_urls'));
     this.localUrls = localData === null ? [] : localData;
   }
@@ -50,7 +55,7 @@ export class HomeComponent implements OnInit {
         if (!localData) {
           localData = [];
         }
-        localData.push(res);
+        localData.push(res.urlData);
         localStorage.setItem('local_urls', JSON.stringify(localData));
         this.localUrls = localData;
         this.urlSubmitting = false;
