@@ -20,7 +20,7 @@ jobs:
     - name: frontend compile
       run: |
         cd client
-        cat ${{ secrets.SuperSecret }} >> "$(pwd)/src/environments/config.ts"
+        cat ${{ secrets.NG_CONFIG }} >> "$(pwd)/src/environments/config.ts"
         npm install
         npm install -g @angular/cli
         ng build --aot --prod
