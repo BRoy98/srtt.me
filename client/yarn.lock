@@ -4461,10 +4461,12 @@ neo-async@^2.5.0, neo-async@^2.6.0:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.1.tgz#ac27ada66167fa8849a6addd837f6b189ad2081c"
   integrity sha512-iyam8fBuCUpWeKPGpaNMetEocMt364qkCsfL9JuhjXX6dRnguRVOfk2GZaDpPjcOKiiXCPINZC1GczQ7iTq3Zw==
 
-ng-recaptcha@^4.3.0:
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/ng-recaptcha/-/ng-recaptcha-4.3.0.tgz#f5ce3c1ea94edbf308967cc17043eb36ec1e5a34"
-  integrity sha512-p9v+4qjPJIrhKeddGHNtYaoeB9prZ893dsLzRMtYpREYZdRIcflRg5xcZ8GFacAnViPlFgjaJvQ/VmZoMKqn5Q==
+ng-recaptcha@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/ng-recaptcha/-/ng-recaptcha-5.0.0.tgz#3aa3344b17e2954ba0eb0e27daf97e216c006b4f"
+  integrity sha512-tUVMmHiCDgWSjqXddjRde9jTnyODwki/akixvFiYK8SaQhgW1aor1WKS8dnNtc+Spx7XFiurEXRVfgyd70G6Mw==
+  dependencies:
+    tslib "^1.9.0"
   optionalDependencies:
     "@types/grecaptcha" "^2.0.33"
 
