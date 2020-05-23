@@ -4468,10 +4468,10 @@ ng-recaptcha@^4.3.0:
   optionalDependencies:
     "@types/grecaptcha" "^2.0.33"
 
-ngx-clipboard@^12.2.0:
-  version "12.2.0"
-  resolved "https://registry.yarnpkg.com/ngx-clipboard/-/ngx-clipboard-12.2.0.tgz#4a546e7bab3a8adb6df9b84cabc18da7fc14abbd"
-  integrity sha512-1moe/2dIUUSGVgTTeItOY8fcULPl47ilSSF2+88Adf91PYMPmilZv7jljlQaLADck5sDDsvYlTTZZTgDqjRHgA==
+ngx-clipboard@^12.3.1:
+  version "12.3.1"
+  resolved "https://registry.yarnpkg.com/ngx-clipboard/-/ngx-clipboard-12.3.1.tgz#565d73b946b10719242e532e748ad912cf8bc97a"
+  integrity sha512-qrUmkfYXEBQZQ4wNKno8yw5eOSxtdkzCPFFPil/XVVc93MNIKUme8aLbS3TEMB4PGsxopjbuTAzV7fptiSOIww==
   dependencies:
     ngx-window-token "^2.0.0"
     tslib "^1.9.0"
