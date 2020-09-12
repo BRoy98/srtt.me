@@ -25,7 +25,7 @@
     "bootstrap": "^4.3.1",
     "core-js": "^3.2.0",
     "jquery": "^3.4.1",
-    "ng-recaptcha": "^4.3.0",
+    "ng-recaptcha": "^6.0.1",
     "ngx-clipboard": "^12.3.1",
     "rxjs": "~6.5.2",
     "zone.js": "~0.9.1"
